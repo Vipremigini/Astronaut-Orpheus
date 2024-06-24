@@ -57,7 +57,7 @@ def trial():
 			"type": "section",
 			"text": {
 				"type": "plain_text",
-				"text": "NORAD ID: " + [rdata][0]['norad_cat_id']
+				"text": "NORAD ID: " + rdata[0]['norad_cat_id']
 			}
 		},
 		{
@@ -67,14 +67,14 @@ def trial():
 			"type": "section",
 			"text": {
 				"type": "plain_text",
-				"text": "TLE 1: " + [rdata][0]['tle1']
+				"text": "TLE 1: " + rdata[0]['tle1']
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "plain_text",
-				"text": "TLE 2: " + [rdata][0]['tle2']
+				"text": "TLE 2: " + rdata[0]['tle2']
 			}
 		},
 		{
@@ -84,14 +84,14 @@ def trial():
 			"type": "section",
 			"text": {
 				"type": "plain_text",
-				"text": "TLE Source: " + [rdata][0]['tle_source']
+				"text": "TLE Source: " + rdata[0]['tle_source']
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "plain_text",
-				"text": "Satellite_ID: " + [rdata][0]['sat_id']
+				"text": "Satellite_ID: " + rdata[0]['sat_id']
 			}
 		}
 	]
