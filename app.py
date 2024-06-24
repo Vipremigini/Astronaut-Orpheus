@@ -18,6 +18,6 @@ def trial():
       "type": "section",
       "text": {
         "type": "mrkdwn",
-        "text": str(rtext)
+        "text": str(rdata)
       }
     }]}
