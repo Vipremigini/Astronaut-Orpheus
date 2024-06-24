@@ -17,7 +17,6 @@ def trial():
   return {"blocks": [    {
       "type": "section",
       "text": {
-        "response_type": "in_channel",
         "type": "mrkdwn",
         "text": str(rdata)
       }
