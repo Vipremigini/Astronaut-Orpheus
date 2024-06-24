@@ -27,8 +27,12 @@ def trial():
   
 
   url = "https://db.satnogs.org/api/tle/?format=json&norad_cat_id=" + nid
-  response = requests.get(url)
+  iurl = "https://db-dev.satnogs.org/api/satellites/?norad_cat_id=" + nid
+  response = requests.get(url)	
   rdata = response.json()
+  ires = requests.get(iurl)
+  idata = ires.json()
+  
 
   if rdata == []:
     return {
@@ -46,6 +50,11 @@ def trial():
     
   return {
 	"blocks": [
+		{
+			"type": "image",
+			"image_url": str(idata[0]["image"]),
+			"alt_text": str(rdata[0]['tle0'])
+		},
 		{
 			"type": "section",
 			"text": {
