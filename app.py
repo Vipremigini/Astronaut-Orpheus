@@ -53,7 +53,7 @@ def trial():
 		{
 			"type": "image",
 			"image_url": idata[0]["image"],
-			"alt_text": str(rdata[0]['tle0'])
+			
 		},
 		{
 			"type": "section",
