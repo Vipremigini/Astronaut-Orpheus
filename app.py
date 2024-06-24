@@ -1,7 +1,7 @@
 from flask import Flask, request
 import requests
 
-headers = { 'accept': 'application/json'}
+headers = { 'accept': 'application/json', 'Authorization': '6b0074dd01b83135bdbde3ae0ad48ee5b8b539bd' , 'Cookie': 'sessionid=6b0074dd01b83135bdbde3ae0ad48ee5b8b539bd'}
 
 app = Flask(__name__)
 
