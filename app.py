@@ -1,7 +1,6 @@
 from flask import Flask, request
 import requests
-
-headers = { 'accept': 'application/json', 'Authorization': 'Bearer 6b0074dd01b83135bdbde3ae0ad48ee5b8b539bd' , 'Cookie': ' Bearer sessionid=6b0074dd01b83135bdbde3ae0ad48ee5b8b539bd'}
+import string
 
 app = Flask(__name__)
 
@@ -9,15 +8,98 @@ app = Flask(__name__)
 def trial():
   sendurl = request.form.get("response_url")
   nid = request.form.get("text")
+  if nid == "":
+    return {"blocks": [    {
+      "type": "section",
+      "text": {
+        "type": "plain_text",
+        "text": "Please enter a NORAD ID"
+      }
+    }]}
+  elif not nid.isdigit():
+    return {"blocks": [    {
+      "type": "section",
+      "text": {
+        "type": "plain_text",
+        "text": "Please enter a valid number"
+      }
+    }]}
+  
+
   url = "https://db.satnogs.org/api/tle/?format=json&norad_cat_id=" + nid
   response = requests.get(url)
   rdata = response.json()
+
+  if rdata == []:
+    return {
+	"blocks": [
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": "Data Not Found",
+				"emoji": true
+			}
+		}
+	]
+}
   
     
-  return {"blocks": [    {
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": str(rdata)
-      }
-    }]}
+  return {
+	"blocks": [
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": "Name: " + rdata[0]['tle0'],
+				"emoji": true
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": "NORAD ID: " + [rdata][0]['norad_cat_id'],
+				"emoji": true
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": "TLE 1: " + [rdata][0]['tle1'],
+				"emoji": true
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": "TLE 2: " + [rdata][0]['tle2'],
+				"emoji": true
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": "TLE Source: " + [rdata][0]['tle_source'],
+				"emoji": true
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": "Satellite_ID: " + [rdata][0]['sat_id'],
+				"emoji": true
+			}
+		}
+	]
+}
