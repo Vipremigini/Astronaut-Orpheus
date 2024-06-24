@@ -52,7 +52,7 @@ def trial():
 	"blocks": [
 		{
 			"type": "image",
-			"image_url": str(idata[0]["image"]),
+			"image_url": idata[0]["image"],
 			"alt_text": str(rdata[0]['tle0'])
 		},
 		{
