@@ -52,8 +52,13 @@ def trial():
 	"blocks": [
 		{
 			"type": "image",
+			"title": {
+				"type": str(rdata[0]['tle0'])
+				"text": "I love tacos",
+				"emoji": true
+			},
 			"image_url": idata[0]["image"],
-			
+			"alt_text": str(rdata[0]['tle0'])
 		},
 		{
 			"type": "section",
