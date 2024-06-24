@@ -37,8 +37,7 @@ def trial():
 			"type": "section",
 			"text": {
 				"type": "plain_text",
-				"text": "Data Not Found",
-				"emoji": true
+				"text": "Data Not Found"
 			}
 		}
 	]
@@ -51,35 +50,14 @@ def trial():
 			"type": "section",
 			"text": {
 				"type": "plain_text",
-				"text": "Name: " + rdata[0]['tle0'],
-				"emoji": true
+				"text": "Name: " + rdata[0]['tle0']
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "plain_text",
-				"text": "NORAD ID: " + [rdata][0]['norad_cat_id'],
-				"emoji": true
-			}
-		},
-		{
-			"type": "divider"
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "plain_text",
-				"text": "TLE 1: " + [rdata][0]['tle1'],
-				"emoji": true
-			}
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "plain_text",
-				"text": "TLE 2: " + [rdata][0]['tle2'],
-				"emoji": true
+				"text": "NORAD ID: " + [rdata][0]['norad_cat_id']
 			}
 		},
 		{
@@ -89,16 +67,31 @@ def trial():
 			"type": "section",
 			"text": {
 				"type": "plain_text",
-				"text": "TLE Source: " + [rdata][0]['tle_source'],
-				"emoji": true
+				"text": "TLE 1: " + [rdata][0]['tle1']
 			}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "plain_text",
-				"text": "Satellite_ID: " + [rdata][0]['sat_id'],
-				"emoji": true
+				"text": "TLE 2: " + [rdata][0]['tle2']
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": "TLE Source: " + [rdata][0]['tle_source']
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": "Satellite_ID: " + [rdata][0]['sat_id']
 			}
 		}
 	]
