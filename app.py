@@ -10,7 +10,7 @@ def trial():
   sendurl = request.form.get("response_url")
   nid = request.form.get("text")
   url = "https://db.satnogs.org/api/tle/?format=json&norad_cat_id=" + nid
-  response = requests.get(url, headers=headers)
+  response = requests.get(url)
   rdata = response.json()
   
     
