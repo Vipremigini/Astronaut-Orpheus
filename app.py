@@ -48,65 +48,10 @@ def trial():
 }
   
     
-  return {
-	"blocks": [
-		{
-			"type": "image",
-			"title": {
-				"type": str(rdata[0]['tle0'])
-				"text": "I love tacos",
-				"emoji": true
-			},
-			"image_url": idata[0]["image"],
-			"alt_text": str(rdata[0]['tle0'])
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "plain_text",
-				"text": "Name: " + str(rdata[0]['tle0'])
-			}
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "plain_text",
-				"text": "NORAD ID: " + str(rdata[0]['norad_cat_id'])
-			}
-		},
-		{
-			"type": "divider"
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "plain_text",
-				"text": "TLE 1: " + str(rdata[0]['tle1'])
-			}
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "plain_text",
-				"text": "TLE 2: " + str(rdata[0]['tle2'])
-			}
-		},
-		{
-			"type": "divider"
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "plain_text",
-				"text": "TLE Source: " + str(rdata[0]['tle_source'])
-			}
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "plain_text",
-				"text": "Satellite_ID: " + str(rdata[0]['sat_id'])
-			}
-		}
-	]
-}
+  return {"blocks": [    {
+      "type": "section",
+      "text": {
+        "type": "plain_text",
+        "text": str(idata)
+      }
+    }]}
